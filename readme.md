@@ -2,7 +2,19 @@
 
 This repo contains a simple Spring Boot application that publishes Proemtheus-style metrics.
 
-- Build and push the Docker image to Docker Hub:
+- Run application:
+
+  ```
+  mvn spring-boot:run
+  ```
+
+- Access the application:
+
+  curl http://localhost:8080/hello
+
+- Access the metrics endpoint at http://localhost:8080/actuator/prometheus?
+
+- Build and push Docker image:
 
   ```
   mvn package -Pjib
