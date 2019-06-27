@@ -61,7 +61,7 @@
                         <groupId>com.google.cloud.tools</groupId>
                         <artifactId>jib-maven-plugin</artifactId>
                         <version>1.3.0</version>
-                        <configuration>
+<!--                        <configuration>
                             <from>
                                 <image>openjdk:8-jre</image>
                             </from>
@@ -69,19 +69,23 @@
                                 <image>${docker.name}</image>
                             </to>
                             <container>
+                                <environment>
+                                    <_JAVA_OPTIONS>'-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005'</_JAVA_OPTIONS>
+                                </environment>
+                                <args>${project.groupId}.Application</args>
                                 <ports>
                                     <port>8080</port>
                                 </ports>
                             </container>
-                        </configuration>
-                        <executions>
+                        </configuration>-->
+<!--                        <executions>
                             <execution>
                                 <phase>package</phase>
                                 <goals>
                                     <goal>build</goal>
                                 </goals>
                             </execution>
-                        </executions>
+                        </executions>-->
                     </plugin>
                 </plugins>
             </build>
