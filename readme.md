@@ -20,3 +20,8 @@ This repo contains a simple Spring Boot application that publishes Proemtheus-st
   mvn package -Pjib
   ```
 
+- Deploy to k8s:
+
+  ```
+  kubectl create -f k8s.yaml
+  ```
