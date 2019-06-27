@@ -12,7 +12,7 @@ This repo contains a simple Spring Boot application that publishes Proemtheus-st
 
   curl http://localhost:8080/hello
 
-- Access the metrics endpoint at http://localhost:8080/actuator/prometheus?
+- Access [metrics endpoint](http://localhost:8080/actuator/prometheus)
 
 - Build and push Docker image:
 
