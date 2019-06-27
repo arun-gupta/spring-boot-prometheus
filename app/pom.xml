@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.5.RELEASE</version>
+        <version>2.1.6.RELEASE</version>
     </parent>
 
     <properties>
@@ -69,10 +69,6 @@
                                 <image>${docker.name}</image>
                             </to>
                             <container>
-                                <environment>
-                                    <_JAVA_OPTIONS>'-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005'</_JAVA_OPTIONS>
-                                    <swarm.http.port>8080</swarm.http.port>
-                                </environment>
                                 <ports>
                                     <port>8080</port>
                                     <port>5005</port>
@@ -92,6 +88,5 @@
             </build>
         </profile>
     </profiles>
-
 </project>
 
