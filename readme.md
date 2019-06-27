@@ -2,10 +2,12 @@
 
 This repo contains a simple Spring Boot application that publishes Proemtheus-style metrics.
 
+## Java Application
+
 - Run application:
 
   ```
-  mvn spring-boot:run
+  mvn -f app/pom.xml spring-boot:run
   ```
 
 - Access the application:
@@ -14,14 +16,22 @@ This repo contains a simple Spring Boot application that publishes Proemtheus-st
 
 - Access [metrics endpoint](http://localhost:8080/actuator/prometheus)
 
+## Deploy to Kubernetes
+
 - Build and push Docker image:
 
   ```
-  mvn package -Pjib
+  mvn -f app/pom.xml -Pjib package
+  ```
+
+  Optionally, build to Docker daemon:
+
+  ```
+  mvn -f app/pom.xml -Pjib jib:dockerBuild
   ```
 
 - Deploy to k8s:
 
   ```
-  kubectl create -f k8s.yaml
+  helm install --name myapp chart
   ```
