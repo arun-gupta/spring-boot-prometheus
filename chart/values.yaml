@@ -1,0 +1,12 @@
+greeting:
+  image: arungupta/greeting
+  replicaCount: 1
+
+image:
+  tag: prom
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  externalPort: 80
+  internalPort: 8080

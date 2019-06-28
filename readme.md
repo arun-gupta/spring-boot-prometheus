@@ -42,3 +42,11 @@ This repo contains a simple Spring Boot application that publishes Proemtheus-st
   ```
   helm install --name myapp chart
   ```
+
+- Access the application:
+
+  ```
+  ENDPOINT=$(kubectl get svc/myapp-greeting \
+    -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+  curl http://$ENDPOINT/hello
+  ```
