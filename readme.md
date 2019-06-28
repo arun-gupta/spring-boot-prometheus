@@ -21,13 +21,6 @@ This repo contains a simple Spring Boot application that publishes Proemtheus-st
 - Build and push Docker image:
 
   ```
-  docker image build -t arungupta/greeting:prom .
-  docker image push arungupta/greeting:prom
-  ```
-
-  Alternatively, build using jib (not working at this time):
-
-  ```
   mvn -f app/pom.xml package -Pjib
   ```
 
@@ -35,6 +28,13 @@ This repo contains a simple Spring Boot application that publishes Proemtheus-st
 
   ```
   mvn -f app/pom.xml jib:dockerBuild -Pjib
+  ```
+
+  Alternatively, build using `Dockerfile`:
+
+  ```
+  docker image build -t arungupta/greeting:prom .
+  docker image push arungupta/greeting:prom
   ```
 
 - Deploy to k8s:
@@ -50,3 +50,4 @@ This repo contains a simple Spring Boot application that publishes Proemtheus-st
     -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
   curl http://$ENDPOINT/hello
   ```
+
