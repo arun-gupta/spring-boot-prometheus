@@ -1,4 +1,4 @@
-# Spring Boot Application with Prometheus
+# Spring Boot Application with Prometheus-style Metrics in Kubernetes
 
 This repo contains a simple Spring Boot application that publishes Proemtheus-style metrics in Kubernetes
 
